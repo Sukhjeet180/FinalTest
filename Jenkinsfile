@@ -14,7 +14,7 @@ pipeline {
         
      stage('Build') {
   steps {
-    bat "msbuild.exe FinalTest.sln" 
+    bat "dotnet build," 
   }
          
 }
