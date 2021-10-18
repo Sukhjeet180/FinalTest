@@ -12,16 +12,13 @@ pipeline {
        }
     }
         
-     stage('Clean') {
+     stage('Build') {
   steps {
-    bat "msbuild.exe FinalTest.sln" /nologo /nr:false /p:platform=\"x64\" /p:configuration=\"release\" /t:clean"
+    bat "msbuild.exe FinalTest.sln" 
   }
+         
 }
         
-        stage('Build') {
- steps {
-  bat "msbuild.exe FinalTest /nologo /nr:false  /p:platform=\"x64\" /p:configuration=\"release\" /p:PackageCertificateKeyFile=<path-to-certificate-file>.pfx /t:clean;restore;rebuild"
- }
-}
+      
     }
 }
